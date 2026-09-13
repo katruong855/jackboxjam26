@@ -23,7 +23,7 @@ public class testPlayerSpawner : MonoBehaviour
         if (asServer) return;
         if (player != networkManager.localPlayer) return;
 
-        StartCoroutine(SpawnNextFrame(player));
+        StartCoroutine(SpawnNextFrame(player)); // part of the waiting thing down below
     }
 
     private IEnumerator SpawnNextFrame(PlayerID player)
