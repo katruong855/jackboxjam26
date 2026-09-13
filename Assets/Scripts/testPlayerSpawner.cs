@@ -8,6 +8,14 @@ public class testPlayerSpawner : MonoBehaviour
     [SerializeField] private NetworkManager networkManager;
     [SerializeField] private GameObject playerPrefab;
 
+    private static readonly Vector3[] spawnPoints =
+    {
+        new Vector3(-2f, 2f, 0f),
+        new Vector3(2f, 2f, 0f),
+        new Vector3(-2f, -2f, 0f),
+        new Vector3(2f, -2f, 0f)
+    };
+
     private void OnEnable()
     {
         networkManager.onPlayerLoadedScene += OnPlayerLoadedScene;
@@ -30,7 +38,8 @@ public class testPlayerSpawner : MonoBehaviour
     {
         yield return null; // wait one frame for other player spawning to not become weird idk
 
-        var spawned = Instantiate(playerPrefab);
+        int index = (int)player.id.value % spawnPoints.Length;
+        var spawned = Instantiate(playerPrefab, spawnPoints[index], Quaternion.identity);
         var identity = spawned.GetComponent<NetworkIdentity>();
         identity.GiveOwnership(player);
     }
