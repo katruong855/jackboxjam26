@@ -486,7 +486,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -744,6 +744,7 @@ GameObject:
   - component: {fileID: 2052617346}
   - component: {fileID: 2052617345}
   - component: {fileID: 2052617348}
+  - component: {fileID: 2052617349}
   m_Layer: 0
   m_Name: PurrNet
   m_TagString: Untagged
@@ -832,6 +833,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   networkManager: {fileID: 2052617346}
   playerPrefab: {fileID: 8627403464016481977, guid: 9356fab5f5b823b4ba4d85b5b9da0607, type: 3}
+--- !u!114 &2052617349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052617344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710a6abba2a9fe944b229c4f32f07454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  networkManager: {fileID: 2052617346}
+  animalPrefab: {fileID: 5164736093696357128, guid: abe375121322469489cdecbb0b350ad5, type: 3}
+  animalCount: 6
+  spawnAreaMin: {x: -4, y: -4}
+  spawnAreaMax: {x: 4, y: 4}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
